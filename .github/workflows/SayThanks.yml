@@ -1,45 +1,45 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: sayThanks
+#name: sayThanks
 
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-  schedule:
-    - cron: 0/10 * * * *
+#on:
+#  push:
+#    branches: [master]
+#  pull_request:
+#    branches: [master]
+#  schedule:
+#    - cron: 0/10 * * * *
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+#    steps:
+#      - uses: actions/checkout@v2
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+#      - name: Set up Python 3.8
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: 3.8
 
-      - name: Install pipenv
-        run: |
-          pip install pipenv
+#      - name: Install pipenv
+#        run: |
+#          pip install pipenv
 
-      - name: Install pipfile
-        run: |
-          pipenv install
+#      - name: Install pipfile
+#        run: |
+#          pipenv install
 
-      - name: pipenv shell
-        run: |
-          pipenv run python run.py nexusphp saythanks
-        env:
-          CONFIG: ${{ secrets.CONFIG }}
+#      - name: pipenv shell
+#        run: |
+#          pipenv run python run.py nexusphp saythanks
+#        env:
+#          CONFIG: ${{ secrets.CONFIG }}
 
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@v4.4.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          add: 'config.ini'
+#      - name: Add & Commit
+#        uses: EndBug/add-and-commit@v4.4.0
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          add: 'config.ini'
