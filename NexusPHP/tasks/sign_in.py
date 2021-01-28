@@ -20,7 +20,7 @@ def signIn(session,url):
 
         print(now(),'网站：%s' % (url), tip ,'魔力值')
         
-    attendanceUrlb = url + '/added.php'
+    attendanceUrlb = https://pt.upxin.net/added.php
     with session.get(attendanceUrlb) as res:
         r = re.compile(r'签到已得\d+')
         tip = r.search(res.text).group() if r.search(res.text) else res.text
