@@ -11,7 +11,7 @@ from NexusPHP.utility.function import cookieParse
 def generateHeader(url):
 
     header = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36',
         'Accept-Language': 'zh-CN',
         'Referer': url
     }
