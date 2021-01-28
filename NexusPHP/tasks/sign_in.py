@@ -21,7 +21,7 @@ def signIn(session,url):
         print(now(),'网站：%s' % (url), tip ,'魔力值')
         
     attendanceUrlb = url + '/added.php'
-    with session.post(attendanceUrlb) as res:
+    with session.post(attendanceUrlb, data = {'action': 'qiandao'}) as res:
         r = re.compile(r'签到已得\d+')
         tip = r.search(res.text).group() if r.search(res.text) else res.text
 
